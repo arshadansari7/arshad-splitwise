@@ -8,7 +8,7 @@ public class SplitwireApplication {
 
 
     public static void main(String[] args) {
-        System.out.println("SPLITWIRE - ARSHAD");
+        System.out.println("SPLITWIRE - ARSHAD 1");
         SpringApplication.run(SplitwireApplication.class, args);
     }
 
