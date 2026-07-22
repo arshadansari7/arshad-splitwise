@@ -3,8 +3,12 @@ package com.example.splitwire.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity @Table(name = "users")
-@Getter @Setter @AllArgsConstructor @NoArgsConstructor
+@Entity
+@Table(name = "users")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -12,6 +16,8 @@ public class User {
     private Integer id;
 
     private String userName;
+    @NonNull
     private String email;
+    @NonNull
     private String password;
 }
