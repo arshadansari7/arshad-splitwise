@@ -3,7 +3,6 @@ package com.example.splitwire.controller;
 import com.example.splitwire.entity.User;
 import com.example.splitwire.repo.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -43,6 +42,11 @@ public class UserController {
     public String deleteUserById(@PathVariable Integer id) {
         userRepository.deleteById(id);
         return "User " + id + " deleted successfully";
+    }
+
+    @GetMapping("/getUser")
+    public List<User> getUsersByName(@RequestParam(name = "name") String name) {
+        return userRepository.findByUserNameContaining(name);
     }
 
 }
